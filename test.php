@@ -23,12 +23,10 @@
           }
           console.log(settings);
           $.ajax(settings).done(function (response) {
-            $('#categories').on('append', response, function(){
-              alert("Nope");
+            $.post("test.php",{"data": response});
             });
           });
         });
-      });
     </script>
   </head>
   <body>
@@ -44,7 +42,7 @@
 
     <?php
       if (isset($_POST)){
-        var_dump($_POST);
+        echo $_POST["data"];
       }
     ?>
 
