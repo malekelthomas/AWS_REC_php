@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,7 +12,14 @@
     <title> Test 2 </title>
     <?php
       //header('Content-type: application/json');
-      echo $_POST["yerr"];
+      $post_data = $_POST["yerr"];
+      $data = json_decode($post_data, true);
+      foreach($data as $key => $value){
+        foreach($value as $stuff){
+          echo "$key, $stuff";
+          echo "<br>";
+       }  
+      }
       echo "\n";
     ?>
 
