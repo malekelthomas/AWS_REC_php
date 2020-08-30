@@ -21,21 +21,24 @@
                 "x-rapidapi-key": "b40cb29b58mshef93c5cf5e102a1p1a7b7fjsn090a508800d0"
             }
           }
-          console.log(settings);
           $.ajax(settings).done(function (response) {
-            $.post("test.php",{"data": response});
+            $("#yerr").val(JSON.stringify(response));
+            $("#myForm").submit();
             });
           });
         });
+
+        
     </script>
   </head>
   <body>
 
   <title>Test</title> 
     <h1>Categories</h1>
-    
     <div id = categories>
-      <p>Content </p>
+      <form id = "myForm" action = "test2.php" method="post">
+        <input type="hidden" id ="yerr" name="yerr" value="">
+      </form>
     </div>
 
     <button id = "btn">Get Categories Hopefully ;(</button>
