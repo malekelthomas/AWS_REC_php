@@ -5,9 +5,9 @@
   $db = "test";
 
   //Create connection
-  $conn = new mysqli($servername, $username, $password, $db);
+  $conn = mysqli_connect($servername, $username, $password, $db);
 
-  //Check conn
+/*   //Check conn
 
   if($conn->connect_error){
     die("Connection failed: ". $conn->connect_error);
@@ -38,6 +38,6 @@
     echo "Ya done fucked up";
   }
   echo "<br><br>";
-  $conn->close();
+  $conn->close(); */
   
 ?>

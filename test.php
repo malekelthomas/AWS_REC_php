@@ -1,3 +1,6 @@
+<?php
+  include 'connection.php';
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -9,26 +12,15 @@
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="test.js"></script>
     <script>
-      $(document).ready(function(){
-        $('#btn').click(function(){
-          var settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": "https://amazon-product-reviews-keywords.p.rapidapi.com/categories?country=US",
-            "method": "GET",
-            "headers": {
-                "x-rapidapi-host": "amazon-product-reviews-keywords.p.rapidapi.com",
-                "x-rapidapi-key": "b40cb29b58mshef93c5cf5e102a1p1a7b7fjsn090a508800d0"
-            }
-          }
-          $.ajax(settings).done(function (response) {
-            $("#yerr").val(JSON.stringify(response));
-            $("#myForm").submit();
-            });
+      $(document).ready(function() {
+        var numCatButtons = 5;
+        $("#btn").click(function(){
+          numCatButtons+=3;
+          $("#categories").load("load_categories.php", {
+            newNumCatButtons: numCatButtons
           });
-        });
-
-        
+        })
+      })
     </script>
   </head>
   <body>
@@ -36,18 +28,27 @@
   <title>Test</title> 
     <h1>Categories</h1>
     <div id = categories>
-      <form id = "myForm" action = "test2.php" method="post">
+      <form id = "myForm" action = "connection.php" method="get">
+        <?php
+          $sql = "SELECT * FROM cat LIMIT 5";
+          $result = mysqli_query($conn, $sql);
+          if(mysqli_num_rows($result) > 0){
+            while ($row = mysqli_fetch_assoc($result)){?>
+              <div class="buttons">
+                <button name ="categories" value="<?php echo $row['properties_key']; ?>"><?php echo $row['properties_key']; ?></button>
+              </div>
+            <?php
+            }
+
+          } else {
+              echo "No categories";
+          }
+        ?>
         <input type="hidden" id ="yerr" name="yerr" value="">
       </form>
     </div>
 
     <button id = "btn">Get Categories Hopefully ;(</button>
-
-    <?php
-      if (isset($_POST)){
-        echo $_POST["data"];
-      }
-    ?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
