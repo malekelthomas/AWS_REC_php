@@ -1,18 +1,18 @@
 <?php
-  $servername ="localhost";
+  $servername ="localhost:3306";
   $username = "root";
-  $password = "root";
+  $password = "";
   $db = "test";
 
   //Create connection
   $conn = mysqli_connect($servername, $username, $password, $db);
 
-/*   //Check conn
+   //Check conn
 
   if($conn->connect_error){
     die("Connection failed: ". $conn->connect_error);
   }
-
+/*
   echo "Connected! <br><br>";
   $sql = "SELECT `properties_key` FROM `cat`";
   

@@ -21,6 +21,17 @@
           });
         })
       })
+      
+      $(document).ready(function () {
+        $("div.buttons > button").click(function(){
+          let z = "";
+          $("[name='categories']").each(function(){
+            z+=$(this).attr('value') + "<br>";
+          })
+          console.log("Z:",z)
+          $("#btnData").html(z)
+        })
+      })
     </script>
   </head>
   <body>
@@ -35,7 +46,7 @@
           if(mysqli_num_rows($result) > 0){
             while ($row = mysqli_fetch_assoc($result)){?>
               <div class="buttons">
-                <button name ="categories" value="<?php echo $row['properties_key']; ?>"><?php echo $row['properties_key']; ?></button>
+                <button class"="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off"  name" ="categories" value="<?php echo $row['properties_key']; ?>"><?php echo $row['properties_key']; ?></button>
               </div>
             <?php
             }
@@ -48,7 +59,12 @@
       </form>
     </div>
 
-    <button id = "btn">Get Categories Hopefully ;(</button>
+    <button id = "btn">See More</button>
+    <button id="submitBtn">Submit</button>
+    
+    <p id="btnData">
+      Data
+    </p>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

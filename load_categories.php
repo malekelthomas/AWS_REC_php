@@ -7,7 +7,7 @@
     if(mysqli_num_rows($result) > 0){
     while ($row = mysqli_fetch_assoc($result)){?>
         <div class="buttons">
-        <button name ="categories" value="<?php echo $row['properties_key']; ?>"><?php echo $row['properties_key']; ?></button>
+        <button class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" name ="categories" value="<?php echo $row['properties_key']; ?>"><?php echo $row['properties_key']; ?></button>
         </div>
     <?php
     }
