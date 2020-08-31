@@ -21,17 +21,29 @@
           });
         })
       })
-      
+     </script>
+     <script> 
       $(document).ready(function () {
-        $("div.buttons > button").click(function(){
-          let z = "";
-          $("[name='categories']").each(function(){
-            z+=$(this).attr('value') + "<br>";
+        var checkboxes = $("input[type=checkbox]");
+        var z="";
+        console.dir(checkboxes);
+        checkboxes.change(function(){
+          if (this.checked){
+            if (z.includes(this.value) == false){
+              z+=this.value+"<br>";
+              $("#btnData").html(z);
+              console.log(z);
+            }
+          }
+          if (this.checked == false){
+            if (z.includes(this.value)){
+              z= z.replace(this.value+"<br>", "");
+              $("#btnData").html(z);
+              console.log(z);
+              }
+            }
           })
-          console.log("Z:",z)
-          $("#btnData").html(z)
         })
-      })
     </script>
   </head>
   <body>
@@ -39,14 +51,20 @@
   <title>Test</title> 
     <h1>Categories</h1>
     <div id = categories>
-      <form id = "myForm" action = "connection.php" method="get">
+      <form id = "myForm">
         <?php
           $sql = "SELECT * FROM cat LIMIT 5";
           $result = mysqli_query($conn, $sql);
           if(mysqli_num_rows($result) > 0){
             while ($row = mysqli_fetch_assoc($result)){?>
-              <div class="buttons">
-                <button class"="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off"  name" ="categories" value="<?php echo $row['properties_key']; ?>"><?php echo $row['properties_key']; ?></button>
+              <!-- <div class="buttons">
+                <button class ="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off"  name ="categories" value="<?php echo $row['properties_key']; ?>"><?php echo $row['properties_key']; ?></button>
+              </div> -->
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="<?php echo $row['properties_key']; ?>" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                  <?php echo $row['properties_key']; ?>
+                </label>
               </div>
             <?php
             }
