@@ -1,3 +1,4 @@
+
 <?php
     include 'connection.php';
     
@@ -10,7 +11,7 @@
         <button class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off" name ="categories" value="<?php echo $row['properties_key']; ?>"><?php echo $row['properties_key']; ?></button>
         </div> -->
         <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="<?php echo $row['properties_key']; ?>" id="defaultCheck1">
+            <input class="form-check-input" type="checkbox" value="<?php echo $row['properties_key']; ?>" id="<?php echo $row['properties_key']; ?>">
             <label class="form-check-label" for="defaultCheck1">
                   <?php echo $row['properties_key']; ?>
             </label>
@@ -19,6 +20,6 @@
     }
 
     } else {
-        echo "Fuck off!";
+        echo "No categories";
     }
 ?>

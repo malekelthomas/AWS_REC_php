@@ -11,18 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="test.js"></script>
-    <script>
-      $(document).ready(function() {
-        var numCatButtons = 5;
-        $("#btn").click(function(){
-          numCatButtons+=3;
-          $("#categories").load("load_categories.php", {
-            newNumCatButtons: numCatButtons
-          });
-        })
-      })
-     </script>
-     <script> 
+    <!-- <script> 
       $(document).ready(function () {
         var checkboxes = $("input[type=checkbox]");
         var z="";
@@ -44,7 +33,33 @@
             }
           })
         })
+    </script> -->
+    <script>
+          
+          $(document).ready(function(){
+            
+            var numCatButtons = 5;
+            $("#btn").on('click',function(){
+              var btnClickValues = JSON.parse(localStorage.getItem('btnClickValues')) || {};
+              var $checkboxes = $("#myForm :checkbox");
+              console.log($checkboxes)
+              numCatButtons+=3;
+              $checkboxes.each(function(){
+              btnClickValues[this.id] = this.checked;
+              console.log(this)
+            });
+            localStorage.setItem("btnClickValues", JSON.stringify(btnClickValues));
+            $.each(btnClickValues, function(key, value) {
+            console.log("Key:",key,"Value:", value)
+            $("#" + key).prop('checked', value);
+          });  
+            $("#categories").load("load_categories.php", {
+                newNumCatButtons: numCatButtons
+              })
+            })
+          })
     </script>
+     
   </head>
   <body>
 
@@ -61,7 +76,7 @@
                 <button class ="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off"  name ="categories" value="<?php echo $row['properties_key']; ?>"><?php echo $row['properties_key']; ?></button>
               </div> -->
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="<?php echo $row['properties_key']; ?>" id="defaultCheck1">
+                <input class="form-check-input" type="checkbox" value="<?php echo $row['properties_key']; ?>" id="<?php echo $row['properties_key']; ?>">
                 <label class="form-check-label" for="defaultCheck1">
                   <?php echo $row['properties_key']; ?>
                 </label>

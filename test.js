@@ -32,3 +32,38 @@ function fetchCategories(){
 }
 
 
+$(document).ready(function(){
+        var checkboxes = $("input[type=checkbox]");
+        var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {};
+        var $checkboxes = $("input[type=checkbox]");
+        var categories_checked="";
+        console.dir(checkboxes);
+        $(document).on('change', "input[type=checkbox]", function(){
+          if (this.checked){
+            if (categories_checked.includes(this.value) == false){
+              categories_checked+=this.value+"<br>";
+              $("#btnData").html(categories_checked);
+              console.log(categories_checked);
+            }
+          }
+          if (this.checked == false){
+            if (categories_checked.includes(this.value)){
+              categories_checked= categories_checked.replace(this.value+"<br>", "");
+              $("#btnData").html(categories_checked);
+              console.log(categories_checked);
+              }
+            }
+          $checkboxes.each(function(){
+            checkboxValues[this.id] = this.checked;
+          });
+          localStorage.setItem("checkboxValues", JSON.stringify(checkboxValues));
+          console.log(localStorage)
+          $.each(checkboxValues, function(key, value) {
+            console.log("Key:",key,"Value:", value)
+            $("#" + key).prop('checked', value);
+          });  
+        })
+  })
+  
+
+
