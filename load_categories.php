@@ -2,8 +2,9 @@
 <?php
     include 'connection.php';
     
-    $buttonCount = $_POST["newNumCatButtons"];
-    $sql = "SELECT * FROM cat LIMIT $buttonCount ";
+    $catCount = $_POST["newNumCats"];
+    $start = $_POST["append"];
+    $sql = "SELECT * FROM cat LIMIT $start,$catCount ";
     $result = mysqli_query($conn, $sql);
     if(mysqli_num_rows($result) > 0){
     while ($row = mysqli_fetch_assoc($result)){?>
