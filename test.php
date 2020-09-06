@@ -60,7 +60,10 @@
       </div>
     </form>
     <button id="submitBtn" type ="button" onclick="submitCategories(event);">Submit</button>
+    <button id ="getProducts" type ="button">See Products</button>
     </div>
+    <p id = products>
+
     </p>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
