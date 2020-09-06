@@ -41,11 +41,13 @@ function submitCategories(e){
     data: $('#categories-selected-form').serialize(),
     success: async function(data){
       var categoriesArr = data.split("<br>");
+      console.log(categoriesArr);
       var breaks = /(\r\n|\n|\r)/gm;
       var formattedCategories = categoriesArr.flatMap(function(str){
         var newStr = str.replace(breaks, "");
         return newStr.length == 0 ? [] : newStr; //return empty if empty or string
       });
+      console.log(formattedCategories)
       var products = {};
 
       for(var i = 0; i < formattedCategories.length; i++){
@@ -55,7 +57,7 @@ function submitCategories(e){
       $.ajax({
         type:"POST",
         url: "products.php",
-        data: JSON.stringify(products),
+        data: products,
         success: function(data){
           alert("Products posted")
         }
@@ -75,6 +77,7 @@ $(document).ready(function (){
   var append_start = 0;
   var numCats = 5;
   var tableBody = $("#selected-cats tbody");
+  var seeProducts = $("#getProducts");
   $.each(checkboxValues, function(key, val){
     $("#"+key).prop("checked", val);
     if(val){
@@ -110,6 +113,10 @@ $(document).ready(function (){
       newNumCats: numCats
     })
     updateStorage();
+  })
+
+  seeProducts.on("click", function (){
+    $("#products").load("products.php");
   })
   
 
