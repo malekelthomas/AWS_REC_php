@@ -116,7 +116,7 @@ $(document).ready(function (){
   })
 
   seeProducts.on("click", function (){
-    $("#products").load("products.php");
+    $("#products").load("product_images.php");
   })
   
 
