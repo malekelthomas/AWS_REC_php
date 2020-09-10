@@ -115,8 +115,21 @@ $(document).ready(function (){
     updateStorage();
   })
 
+  document.getElementById("back-to-selection").style.display="none";
+
   seeProducts.on("click", function (){
-    $("#products").load("product_images.php");
+    document.getElementById("back-to-selection").style.display="block";
+    $("#products").load("product_images.php", function(){
+      document.getElementById("checkbox-table").style.display="none";
+    });
+  })
+
+  $("#back-button").on("click", function(){
+    console.log("clicked")
+    document.getElementById("checkbox-table").style.display="block";
+    document.getElementById("products").style.display="none";
+    document.getElementById("back-to-selection").style.display="none";
+
   })
   
 
