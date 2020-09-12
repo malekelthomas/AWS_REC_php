@@ -12,15 +12,29 @@
         foreach($val as $descriptions => $descriptor){
             if (is_array($descriptor)){
                 foreach($descriptor as $details){
-                    foreach($details as $product_picture){
-                        if(strpos($product_picture, ".jpg") !== false){
-                            if (is_array($product_picture) == false){
-                                //echo "$key,$stuff\n";
-                                if ($img_arr["$key"] == null){
-                                    $img_arr["$key"] = array();
-                                    }
-                                $img_arr["$key"][$i] = $product_picture;
-                                $i++;
+                    foreach($details as $product){
+                        if(strpos($product,"https") !== false){
+                            if(strpos($product, ".jpg") == false){
+                                if (is_array($product) == false){
+                                    //echo "$key,$stuff\n";
+                                    if ($img_arr["$key"] == null){
+                                        $img_arr["$key"] = array();
+                                        }
+                                    $img_arr[$key][$i] = "$product";
+
+                                }
+                            }
+                        
+                            elseif(strpos($product, ".jpg") !== false){
+                                if (is_array($product) == false){
+                                    //echo "$key,$stuff\n";
+                                    if ($img_arr["$key"] == null){
+                                        $img_arr["$key"] = array();
+                                        }
+                                    
+                                    $img_arr[$key][$i].=",$product";
+                                    $i++;
+                                }
                             }
                         }
                     }
@@ -28,6 +42,7 @@
             }
         }
     }
+    echo var_dump($img_arr);
     $_SESSION["images"] = $img_arr;
 ?>
 
