@@ -72,6 +72,22 @@ function submitCategories(e){
   })
   }
 
+function submitProducts(){
+  var form = $("#products-images-form").serialize();
+  $(form).prop('disabled', false);
+  $.ajax({
+    url: 'selected_products.php',
+    type: 'POST',
+    data: $("#products-images-form"),
+    success: function (data){
+      console.log(data)
+    },
+    error: function (data){
+      console.log("error")
+    }
+  })
+}
+
 $(document).ready(function (){
   var checkboxes = $("#categories");
   var checkboxValues = JSON.parse(localStorage.getItem('checkboxValues')) || {};
@@ -124,14 +140,11 @@ $(document).ready(function (){
     $("#products").load("product_images.php", function(){
       document.getElementById("checkbox-table").style.display="none";
       $("img").on("click", function(){
-        console.log($(this).css("border-top-color"))
         if ($(this).css("border-top-color") == "rgb(0, 0, 0)"){
-          console.log("yerrr")
           $(this).css("border", "3px solid red");
           return false;
         }
         if ($(this).css("border-top-color") == "rgb(255, 0, 0)"){
-          console.log("yerrr")
           $(this).css("border", "3px solid black");
           return false;
         }
