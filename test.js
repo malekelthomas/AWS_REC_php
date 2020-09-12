@@ -42,11 +42,13 @@ function submitCategories(e){
     success: async function(data){
       var categoriesArr = data.split("<br>");
       console.log(categoriesArr);
+      // Remove return symbols
       var breaks = /(\r\n|\n|\r)/gm;
       var formattedCategories = categoriesArr.flatMap(function(str){
         var newStr = str.replace(breaks, "");
         return newStr.length == 0 ? [] : newStr; //return empty if empty or string
       });
+      //
       console.log(formattedCategories)
       var products = {};
 
@@ -121,6 +123,19 @@ $(document).ready(function (){
     document.getElementById("back-to-selection").style.display="block";
     $("#products").load("product_images.php", function(){
       document.getElementById("checkbox-table").style.display="none";
+      $("img").on("click", function(){
+        console.log($(this).css("border-top-color"))
+        if ($(this).css("border-top-color") == "rgb(0, 0, 0)"){
+          console.log("yerrr")
+          $(this).css("border", "3px solid red");
+          return false;
+        }
+        if ($(this).css("border-top-color") == "rgb(255, 0, 0)"){
+          console.log("yerrr")
+          $(this).css("border", "3px solid black");
+          return false;
+        }
+      })
     });
   })
 
