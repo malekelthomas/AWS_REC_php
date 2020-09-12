@@ -74,13 +74,15 @@ function submitCategories(e){
 
 function submitProducts(){
   var form = $("#products-images-form").serialize();
-  $(form).prop('disabled', false);
   $.ajax({
     url: 'selected_products.php',
     type: 'POST',
-    data: $("#products-images-form"),
+    data: form,
     success: function (data){
-      console.log(data)
+      console.log("form submitted")
+      document.getElementById("checkbox-table").style.display="block";
+      document.getElementById("products").style.display="none";
+      document.getElementById("back-to-selection").style.display="none";
     },
     error: function (data){
       console.log("error")
@@ -142,6 +144,9 @@ $(document).ready(function (){
       $("img").on("click", function(){
         if ($(this).css("border-top-color") == "rgb(0, 0, 0)"){
           $(this).css("border", "3px solid red");
+          var url_imgLink= $(this).attr('value')+" "+$(this).attr('src');
+          $(`#products-images-form :input[value="${url_imgLink}"]`).val(`${url_imgLink} checked`)
+          console.log($('#products-images-form'))
           return false;
         }
         if ($(this).css("border-top-color") == "rgb(255, 0, 0)"){
