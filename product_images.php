@@ -8,10 +8,9 @@
 
 <?php
     if($_SERVER["REQUEST_METHOD"] == "GET"){
-       
-         foreach($_SESSION["images"] as $categories){
-             foreach($categories as $products){
-                 echo "<img class='rounded-circle' src=$products>";
+         foreach($_SESSION["images"] as $categories => $products){
+             foreach($products as $images){
+                 echo "<img class='rounded-circle $categories' src=$images>";
              }
          };
     }
