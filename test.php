@@ -84,7 +84,7 @@
           </div>
         </form>
         <button id="submitBtn" type ="button" onclick="submitCategories(event);">Submit</button>
-        <button id ="getProducts" type ="button">See Products</button>
+        <button id ="getProducts" type ="button" disabled = "true">See Products</button>
       </div>
     </div>
     <p id = products>

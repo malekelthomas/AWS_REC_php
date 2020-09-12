@@ -59,7 +59,7 @@ function submitCategories(e){
         url: "products.php",
         data: products,
         success: function(data){
-          alert("Products posted")
+          $("#getProducts").attr("disabled", false);
         }
       });
     },
