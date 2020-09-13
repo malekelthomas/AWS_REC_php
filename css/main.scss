@@ -1,0 +1,179 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto&family=Signika&display=swap);
+
+body {
+    margin:0;
+    font-family: 'Signika';
+    position: relative;
+    width: 1920px;
+    height: 1080px;
+    background: #1A1C20;
+
+}
+
+.container{
+    margin:0 auto;
+    .logo {
+        position: absolute;
+        width: 218px;
+        height: 26px;
+        left: 34px;
+        top: 29px;
+    
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 21px;
+        line-height: 25px;
+    
+        color: rgba(244, 244, 244, 0.6);
+    
+    }
+
+    .navigation{
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        left: 1865px;
+        top: 29px;
+        .menu-img{
+            background: rgba(244, 244, 244, 0.6);
+        }
+    }
+
+    /* .top-left{
+        
+        position: relative;
+        width: 360px;
+        height: 360px;
+        left: 376px;
+        top: 171px;
+
+        background: rgba(240, 165, 0, 0.6);
+
+        img{
+            max-height: 50%;
+            max-width: 50%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    
+        
+        
+    }
+
+    
+    .top-right{
+        .box2{
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            left: 879px;
+            top: 171px;
+
+            background: rgba(240, 165, 0, 0.6);
+
+            img{
+                max-height: 50%;
+                max-width: 50%;
+                width: auto;
+                height: auto;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+        }
+    }
+
+    .bottom-left{
+        .box3{
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            left: 632px;
+            top: 426px;
+            background: rgba(207, 117, 0, 0.6);
+
+
+            img{
+                max-height: 50%;
+                max-width: 50%;
+                width: auto;
+                height: auto;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+        }
+    }
+
+        
+
+    .bottom-right{
+        .box4{
+            position: absolute;
+            width: 360px;
+            height: 360px;
+            left: 1134px;
+            top: 426px;
+
+            background: rgba(207, 117, 0, 0.6);
+
+            img{
+                max-height: 50%;
+                max-width: 50%;
+                width: auto;
+                height: auto;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+
+            
+
+
+
+        }
+    }
+ */
+
+
+    
+
+}
+/* .get-started {
+    background-color: #f4f4f4;
+    .get-started-button{
+        position: absolute;
+        width: 534.02px;
+        height: 63px;
+        left: 693px;
+        top: 915px;
+
+        font-family: 'Signika';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 21px;
+        line-height: 26px;
+        text-align: center;
+
+        color: rgba(26, 28, 32, 0.75);
+        
+    }
+}
+
+ */
