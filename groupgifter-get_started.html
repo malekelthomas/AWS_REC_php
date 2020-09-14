@@ -1,14 +1,41 @@
-<html> 
-  <head> 
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script> 
-    $(function(){
-      $("#includedContent").load("groupgifter-base.html"); 
-    });
-    </script> 
-  </head> 
+<html>
 
-  <body> 
-     <div id="includedContent"></div>
-  </body> 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/main.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+  <script>
+    $(function () {
+      $("#includedContent").load("groupgifter-base.html");
+    });
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="logo">
+      <p>groupgifter</p>
+    </div>
+    <div class="navigation">
+      <img src="images/menu-24px.svg" alt="Menu" class="menu-img">
+    </div>
+    <div class="profile-ellipse">
+    </div>
+    <span class="username">USERNAME</span>
+  </div>
+  <div class="choose-products">
+    <button class="choose-products-button">CHOOSE PRODUCTS</button>
+  </div>
+  <div class="create-group">
+    <button class="create-group-button">CREATE GROUP</button>
+  </div>
+  <div class="view-groups">
+    <button class="view-groups-button">VIEW GROUPS</button>
+  </div>
+  
+</body>
+
 </html>

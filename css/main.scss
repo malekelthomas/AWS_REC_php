@@ -40,7 +40,7 @@ body {
         }
     }
 
-    /* .top-left{
+     .top-left{
         
         position: relative;
         width: 360px;
@@ -149,13 +149,13 @@ body {
 
         }
     }
- */
+ 
 
 
     
 
 }
-/* .get-started {
+ .get-started {
     background-color: #f4f4f4;
     .get-started-button{
         position: absolute;
@@ -176,4 +176,90 @@ body {
     }
 }
 
- */
+.profile-ellipse{
+  border-radius:500px;
+	background-color:rgba(240.00000089406967, 165.00000536441803, 0, 0.6000000238418579);
+	opacity:1;
+	width:390px;
+  height:390px;
+  
+  position: absolute;
+  left: 525px;
+  top: 135px;
+}
+
+.choose-products-button{
+
+    background-color:rgba(244.0000006556511, 244.0000006556511, 244.0000006556511, 0.6000000238418579);
+    opacity:1;
+    width:304px;
+    height:62px;
+    left: 235px;
+    top: 751px;
+    position: absolute;
+
+    font-family: 'Signika';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 26px;
+    text-align: center;
+
+    color: rgba(26, 28, 32, 0.75);
+
+  }
+
+  .username{
+    color:rgba(207.00000286102295, 117.00000062584877, 0, 0.6000000238418579);
+    opacity:1;
+    width:577px;
+    height:54px;
+    font-family:'Signika';
+    text-align:center;
+    font-size:42px;
+    letter-spacing:0;
+    line-height:'undefined';
+    position: absolute;
+    width: 577px;
+    height: 54px;
+    left: 431px;
+    top: 596px;
+
+  }
+
+  .create-group-button{
+    
+    background-color:rgba(244.0000006556511, 244.0000006556511, 244.0000006556511, 0.6000000238418579);
+    opacity:1;
+    width:304px;
+    height:62px;
+    font-family: 'Signika';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 26px;
+    text-align: center;
+    position: absolute;
+    left: 598px;
+    top: 751px;
+    color: rgba(26, 28, 32, 0.75);
+
+  }
+
+  .view-groups-button{
+    background-color:rgba(244.0000006556511, 244.0000006556511, 244.0000006556511, 0.6000000238418579);
+    opacity:1;
+    width:304px;
+    height:62px;
+    font-family: 'Signika';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 21px;
+    line-height: 26px;
+    text-align: center;
+    position: absolute;
+    left: 961px;
+    top: 751px;
+    color: rgba(26, 28, 32, 0.75);
+  }
+

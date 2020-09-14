@@ -9,116 +9,7 @@ body {
 }
 
 .container {
-  /* .top-left{
-        
-        position: relative;
-        width: 360px;
-        height: 360px;
-        left: 376px;
-        top: 171px;
-
-        background: rgba(240, 165, 0, 0.6);
-
-        img{
-            max-height: 50%;
-            max-width: 50%;
-            width: auto;
-            height: auto;
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-        }
-    
-        
-        
-    }
-
-    
-    .top-right{
-        .box2{
-            position: absolute;
-            width: 360px;
-            height: 360px;
-            left: 879px;
-            top: 171px;
-
-            background: rgba(240, 165, 0, 0.6);
-
-            img{
-                max-height: 50%;
-                max-width: 50%;
-                width: auto;
-                height: auto;
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                margin: auto;
-            }
-        }
-    }
-
-    .bottom-left{
-        .box3{
-            position: absolute;
-            width: 360px;
-            height: 360px;
-            left: 632px;
-            top: 426px;
-            background: rgba(207, 117, 0, 0.6);
-
-
-            img{
-                max-height: 50%;
-                max-width: 50%;
-                width: auto;
-                height: auto;
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                margin: auto;
-            }
-        }
-    }
-
-        
-
-    .bottom-right{
-        .box4{
-            position: absolute;
-            width: 360px;
-            height: 360px;
-            left: 1134px;
-            top: 426px;
-
-            background: rgba(207, 117, 0, 0.6);
-
-            img{
-                max-height: 50%;
-                max-width: 50%;
-                width: auto;
-                height: auto;
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                margin: auto;
-            }
-
-            
-
-
-
-        }
-    }
- */
+  margin: 0 auto;
 }
 
 .container .logo {
@@ -147,26 +38,189 @@ body {
   background: rgba(244, 244, 244, 0.6);
 }
 
-/* .get-started {
-    background-color: #f4f4f4;
-    .get-started-button{
-        position: absolute;
-        width: 534.02px;
-        height: 63px;
-        left: 693px;
-        top: 915px;
-
-        font-family: 'Signika';
-        font-style: normal;
-        font-weight: normal;
-        font-size: 21px;
-        line-height: 26px;
-        text-align: center;
-
-        color: rgba(26, 28, 32, 0.75);
-        
-    }
+.container .top-left {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  left: 376px;
+  top: 171px;
+  background: rgba(240, 165, 0, 0.6);
 }
 
- */
+.container .top-left img {
+  max-height: 50%;
+  max-width: 50%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.container .top-right .box2 {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  left: 879px;
+  top: 171px;
+  background: rgba(240, 165, 0, 0.6);
+}
+
+.container .top-right .box2 img {
+  max-height: 50%;
+  max-width: 50%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.container .bottom-left .box3 {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  left: 632px;
+  top: 426px;
+  background: rgba(207, 117, 0, 0.6);
+}
+
+.container .bottom-left .box3 img {
+  max-height: 50%;
+  max-width: 50%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.container .bottom-right .box4 {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  left: 1134px;
+  top: 426px;
+  background: rgba(207, 117, 0, 0.6);
+}
+
+.container .bottom-right .box4 img {
+  max-height: 50%;
+  max-width: 50%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.get-started {
+  background-color: #f4f4f4;
+}
+
+.get-started .get-started-button {
+  position: absolute;
+  width: 534.02px;
+  height: 63px;
+  left: 693px;
+  top: 915px;
+  font-family: 'Signika';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 21px;
+  line-height: 26px;
+  text-align: center;
+  color: rgba(26, 28, 32, 0.75);
+}
+
+.profile-ellipse {
+  border-radius: 500px;
+  background-color: rgba(240, 165, 0, 0.6);
+  opacity: 1;
+  width: 390px;
+  height: 390px;
+  position: absolute;
+  left: 525px;
+  top: 135px;
+}
+
+.choose-products-button {
+  background-color: rgba(244, 244, 244, 0.6);
+  opacity: 1;
+  width: 304px;
+  height: 62px;
+  left: 235px;
+  top: 751px;
+  position: absolute;
+  font-family: 'Signika';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 21px;
+  line-height: 26px;
+  text-align: center;
+  color: rgba(26, 28, 32, 0.75);
+}
+
+.username {
+  color: rgba(207, 117, 0, 0.6);
+  opacity: 1;
+  width: 577px;
+  height: 54px;
+  font-family: 'Signika';
+  text-align: center;
+  font-size: 42px;
+  letter-spacing: 0;
+  line-height: 'undefined';
+  position: absolute;
+  width: 577px;
+  height: 54px;
+  left: 431px;
+  top: 596px;
+}
+
+.create-group-button {
+  background-color: rgba(244, 244, 244, 0.6);
+  opacity: 1;
+  width: 304px;
+  height: 62px;
+  font-family: 'Signika';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 21px;
+  line-height: 26px;
+  text-align: center;
+  position: absolute;
+  left: 598px;
+  top: 751px;
+  color: rgba(26, 28, 32, 0.75);
+}
+
+.view-groups-button {
+  background-color: rgba(244, 244, 244, 0.6);
+  opacity: 1;
+  width: 304px;
+  height: 62px;
+  font-family: 'Signika';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 21px;
+  line-height: 26px;
+  text-align: center;
+  position: absolute;
+  left: 961px;
+  top: 751px;
+  color: rgba(26, 28, 32, 0.75);
+}
 /*# sourceMappingURL=main.css.map */
