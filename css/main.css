@@ -223,4 +223,14 @@ body {
   top: 749px;
   color: rgba(26, 28, 32, 0.75);
 }
+.prev-button-circle {
+  position: absolute; 
+	border-radius:500px;
+	background-color:rgba(240.00000089406967, 165.00000536441803, 0, 0.699999988079071);
+	opacity:1;
+	width:36px;
+  height:36px;
+  left: 193px;
+  top: 474px;
+}
 /*# sourceMappingURL=main.css.map */
