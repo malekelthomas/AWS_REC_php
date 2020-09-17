@@ -1,4 +1,10 @@
 @import url(https://fonts.googleapis.com/css2?family=Roboto&family=Signika&display=swap);
+
+@-ms-viewport {
+  width: device-width ;
+  zoom: 1.0 ;
+}
+
 body {
   margin: 0;
   font-family: 'Signika';
@@ -38,8 +44,8 @@ body {
   background: rgba(244, 244, 244, 0.6);
 }
 
-.container .top-left {
-  position: relative;
+.container .top-left .box1{
+  position: absolute;
   width: 360px;
   height: 360px;
   left: 376px;
@@ -47,7 +53,7 @@ body {
   background: rgba(240, 165, 0, 0.6);
 }
 
-.container .top-left img {
+.container .top-left .box1  img {
   max-height: 50%;
   max-width: 50%;
   width: auto;
@@ -261,5 +267,121 @@ body {
   left: 200px;
   top: 488px;
 }
+
+ @media only screen and (min-width: 360px) and (max-width: 767px) {
+ 
+	 body {
+	  margin: 0;
+	  font-family: 'Signika';
+	  position: relative;
+	  width: 100%;
+	  height: 100%;
+	  background: #1A1C20;
+	}
+	.container .logo {
+	  position: absolute;
+	  width: 50%;
+	  height: 50%;
+	  left: 34px;
+	  top: 29px;
+	  font-family: Roboto;
+	  font-style: normal;
+	  font-weight: normal;
+	  font-size: 21px;
+	  line-height: 25px;
+	  color: rgba(244, 244, 244, 0.6);
+	}
+	
+	.container .top-left .box1{
+	  position: absolute;
+	  width: 180px; //divby2
+	  height: 180px;
+	  left: 10px; //-366
+	  top: 171px;
+	  background: rgba(240, 165, 0, 0.6);
+	}
+	
+	.container .top-left .box1 img {
+	  max-height: 50%;
+	  max-width: 50%;
+	  width: auto;
+	  height: auto;
+	  position: absolute;
+	  top: 0;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  margin: auto;
+	}
+	
+	.container .top-right .box2 {
+	  position: absolute;
+	  width: 180px;
+	  height: 180px;
+	  left: 229px;//-660
+	  top: 171px;
+	  background: rgba(240, 165, 0, 0.6);
+	}
+	
+	.container .top-right .box2 img {
+	  max-height: 50%;
+	  max-width: 50%;
+	  width: auto;
+	  height: auto;
+	  position: absolute;
+	  top: 0;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  margin: auto;
+	}
+	
+	.container .bottom-left .box3{
+	  position: absolute;
+	  width: 180px;
+	  height: 180px;
+	  left: 10 px; //-616
+	  top: 426px;
+	  background: rgba(207, 117, 0, 0.6);
+	}
+	
+	.container .bottom-left .box3 img {
+	  max-height: 50%;
+	  max-width: 50%;
+	  width: auto;
+	  height: auto;
+	  position: absolute;
+	  top: 0;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  margin: auto;
+	}
+	
+	.container .bottom-right .box4 {
+	  position: absolute;
+	  width: 180px;
+	  height: 180px;
+	  left: 328px;
+	  top: 426px;
+	  background: rgba(207, 117, 0, 0.6);
+	}
+	
+	.container .bottom-right .box4 img {
+	  max-height: 50%;
+	  max-width: 50%;
+	  width: auto;
+	  height: auto;
+	  position: absolute;
+	  top: 0;
+	  bottom: 0;
+	  left: 0;
+	  right: 0;
+	  margin: auto;
+	}
+	
+	 
+	 
+	 }
   
 /*# sourceMappingURL=main.css.map */
