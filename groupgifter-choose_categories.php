@@ -1,3 +1,6 @@
+<?php
+  include 'connection.php';
+?>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -25,30 +28,23 @@
         <hr class="prev-line1">
         <hr class="prev-line2">
         <!-- Circles start left, counter-clockwise-->
-        <div id="ellipse1" class="ellipse">
-          <p class="ellipse1-text"></p>
+        
+        <?php
+        $sql = "SELECT * FROM cat LIMIT 0,8";
+        $result = mysqli_query($conn, $sql);
+        if(mysqli_num_rows($result) > 0){
+          while($row = mysqli_fetch_assoc($result)){?>
+        <?php $id = ($row['id'] <= 8) ? $row['id']:'';?>
+        <div style="vertical-align:middle" id="ellipse<?php echo $id?>" class="ellipse">
+          <p class="ellipse<?php echo $id?>-text"><?php echo $row['properties_key'];?></p>
         </div>
-        <div id="ellipse2" class="ellipse">
-          <p class="ellipse2-text"></p>
-        </div>
-        <div id="ellipse3"class="ellipse">
-          <p class="ellipse3-text"></p>
-        </div>
-        <div id="ellipse4"class="ellipse">
-          <p class="ellipse4-text"></p>
-        </div>
-        <div id="ellipse5" class="ellipse">
-          <p class="ellipse5-text"></p>
-        </div>
-        <div id="ellipse6" class="ellipse">
-          <p class="ellipse6-text"></p>
-        </div>
-        <div id="ellipse7" class="ellipse">
-          <p class="ellipse7-text"></p>
-        </div>
-        <div id="ellipse8" class="ellipse">
-          <p class="ellipse8-text"></p>
-        </div>
+        <?php
+          }
+      }
+      else {
+        echo "No categories";
+      }
+        ?>
         <div class="next-button"></div>
         <hr class="next-line1">
         <hr class="next-line2">
