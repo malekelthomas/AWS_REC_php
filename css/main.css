@@ -230,6 +230,41 @@ body {
   color: rgba(26, 28, 32, 0.75);
 }
 
+.next-button { 
+  position: absolute;
+	border-radius:500px;
+	background-color:rgba(240.00000089406967, 165.00000536441803, 0, 0.699999988079071);
+	opacity:1;
+	width:36px;
+  height:36px;
+  left: 1211px;
+  top: 474px;
+}
+
+.next-line1{
+  position: absolute;
+  width: 18.44px;
+  height: 0px;
+  left: 1222px;
+  top: 476px;
+  transform: rotate(-139.39870646625258deg);
+	opacity:1;
+	border:1px solid rgba(0, 0, 0, 1);
+
+}
+.next-line2 { 
+  position: absolute;
+  width: 18.03px;
+  height: 0px;
+  left: 1222px;
+  top: 488px;
+	transform: rotate(-33.69006657880298deg);
+	opacity:1;
+	border:1px solid rgba(0, 0, 0, 1);
+}
+
+
+
 .prev-button {
   position: absolute; 
 	border-radius:500px;
@@ -267,6 +302,20 @@ body {
   left: 200px;
   top: 488px;
 }
+.choose-cats { 
+	color:rgba(240.00000089406967, 165.00000536441803, 0, 0.699999988079071);
+	opacity:1;
+	width:271px;
+	height:38px;
+	font-family:Roboto;
+	text-align:left;
+	font-size:32px;
+	letter-spacing:0;
+  line-height:undefined;
+  left: 609px;
+  top: 711px;
+  position: absolute;
+}
 
  @media only screen and (min-width: 360px) and (max-width: 767px) {
  
@@ -294,9 +343,9 @@ body {
 	
 	.container .top-left .box1{
 	  position: absolute;
-	  width: 180px; //divby2
+	  width: 180px; /*divby2*/
 	  height: 180px;
-	  left: 10px; //-366
+	  left: 10px; /*-366*/
 	  top: 171px;
 	  background: rgba(240, 165, 0, 0.6);
 	}
@@ -318,7 +367,7 @@ body {
 	  position: absolute;
 	  width: 180px;
 	  height: 180px;
-	  left: 229px;//-660
+	  left: 229px;/*-660*/
 	  top: 171px;
 	  background: rgba(240, 165, 0, 0.6);
 	}
@@ -340,7 +389,7 @@ body {
 	  position: absolute;
 	  width: 180px;
 	  height: 180px;
-	  left: 10 px; //-616
+	  left: 10 px; /*-616*/
 	  top: 426px;
 	  background: rgba(207, 117, 0, 0.6);
 	}
