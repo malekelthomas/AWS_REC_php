@@ -16,7 +16,7 @@
     });
   </script>
 </head>
-
+<?php session_start();?>
 <body>
     <div class="container">
         <div class="logo">
@@ -30,33 +30,18 @@
         <hr class="prev-line2">
         <!-- Circles start left, counter-clockwise-->
         <div id="category-ellipses">
-
         <?php
-          $sql = "SELECT * FROM cat LIMIT 0,8";
-          $result = mysqli_query($conn, $sql);
-          if(mysqli_num_rows($result) > 0){
-            while($row = mysqli_fetch_assoc($result)){?>
-          <?php $id =0;
-            if ($row['id'] <= 8){
-              $id=$row['id'];
-            }
-            else if($row['id']%8==0){
-              $id=8;
-            }
-            else{
-              $id = $row['id']%8;
-            }
+        foreach($_SESSION["images"] as $categories => $products){
+                    foreach($products as $details){
+                        //details = [product-url,product-img]
+                        $links = preg_split("/[,]/", $details);
+                        echo "<img class='rounded-circle' value ='{$links[0]}' src={$links[1]}>";
+                        //echo "$categories,{$links[0]}, {$links[1]}\n";?>
+                        <input type="hidden" name="products[]" value='<?php echo "{$links[0]} {$links[1]}"?>'/><?php
+                    }
+                };
+            
         ?>
-          <div style="vertical-align:middle" id="ellipse<?php echo $id?>" class="ellipse">
-            <input type="hidden" value=<?php echo $row['properties_key']?> name="category"><p class="paragraph-ellipse-text"><?php echo $row['properties_key'];?></p>
-          </div>
-          <?php
-            }
-        }
-        else {
-          echo "No categories";
-        }
-          ?>
         </div>
         <div id="seeMore" class="next-button"></div>
         <hr class="next-line1">
